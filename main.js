@@ -8,11 +8,12 @@
 
     var n = Math.floor(Math.random()* arr.length);
     this.textContent = arr[n];
-    arr.splice(n,1);
 
-    if(arr==""){
-      this.textContent = "終わり";
-    }
+      if(arr == ""){
+        this.textContent = "終わり";
+      }
+
+    arr.splice(n,1);
 
     // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,10];
     //
