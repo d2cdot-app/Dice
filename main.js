@@ -5,15 +5,19 @@
   var arr = [1,2,3,4,5,6,7,8,9,10];
 
   btn.addEventListener('click', function() {
+    if(arr.length == 0){
+      this.textContent = "終わり";
+    }else{
+      var n = Math.floor(Math.random()* arr.length);
+      this.textContent = arr[n];
+      arr.splice(n,1);
+      console.log( arr.length);
+    }
 
-    var n = Math.floor(Math.random()* arr.length);
-    this.textContent = arr[n];
 
-      if(arr == ""){
-        this.textContent = "終わり";
-      }
 
-    arr.splice(n,1);
+
+
 
     // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,10];
     //
