@@ -28,6 +28,7 @@
 
     loopSleep(10, 1000, function(i){
       console.log(i);
+      
     });
 
     if(arr.length == 0){
