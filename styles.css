@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+#btn {
+  margin: 30px auto 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 180px;
+  color: #111;
+  font-size: 42px;
+  font-weight: bold;
+  opacity: 0.9;
+  box-shadow: 0 10px 0 #aaa;
+  border: 3px solid #aaa;
+  user-select: none;
+}
+
+#btn.pushed {
+  margin-top: 36px;
+  box-shadow: 0 4px 0 #aaa;
+}
