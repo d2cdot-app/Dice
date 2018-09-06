@@ -25,10 +25,10 @@
 
 
   btn.addEventListener('click', function() {
-
-    loopSleep(10, 1000, function(i){
-      console.log(i);
-      
+    var this_btn = this;
+    loopSleep(10, 100, function(i){
+      console.log(this_btn);
+      this_btn.textContent = i;
     });
 
     if(arr.length == 0){
@@ -37,32 +37,9 @@
       var n = Math.floor(Math.random()* arr.length);
       this.textContent = arr[n];
       arr.splice(n,1);
+      console.log(n);
+
     }
-
-
-
-
-
-
-
-    // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,10];
-    //
-    // for(var i = arr.length - 1; i > 0; i--){
-    //   var j = Math.floor(Math.random() * (i + 1));
-    //   var tmp = arr[i];
-    //   arr[i] = arr[j];
-    //   arr[j] = tmp;
-    //   arr.pop() ;
-    // }
-    //
-    // this.textContent = n;
-
-    //
-    // var min = 1;
-    // var max = 16;
-    // var n = Math.floor(Math.random() * (max + 1 - min)) + min;
-    // this.textContent = n;
-
   });
   btn.addEventListener('mousedown', function() {
     this.className = 'pushed';
