@@ -10,8 +10,10 @@
       var this_btn = this;
       var countup = function(){
         var id = setTimeout(countup,300);
-        this_btn.textContent = count++;
-        if(count > 5){
+        this_btn.textContent = Math.floor(Math.random()* arr.length);
+        console.log(count);
+        count++;
+        if(arr.length == count){
           clearTimeout(id);
           if(arr.length == 0){
             this_btn.textContent = "終わり";
