@@ -9,23 +9,23 @@
       var count = 0;
       var this_btn = this;
       var countup = function(){
-        var id = setTimeout(countup,300);
+      var id = setTimeout(countup,300);
         this_btn.textContent = Math.floor(Math.random()* arr.length);
         console.log(count);
         count++;
-        if(arr.length == count){
+        if(arr.length == 0){
+          this_btn.textContent = "終わり";
           clearTimeout(id);
-          if(arr.length == 0){
-            this_btn.textContent = "終わり";
-          }else{
-            console.log("test1");
-            var n = Math.floor(Math.random()* arr.length);
-            this_btn.textContent = arr[n];
-            arr.splice(n,1);
+        }else if(arr.length == count){
+          clearTimeout(id);
+          console.log("test1");
+          var n = Math.floor(Math.random()* arr.length);
+          this_btn.textContent = arr[n];
+          arr.splice(n,1);
 
           }
         }
-      }
+
       countup();
 
 
