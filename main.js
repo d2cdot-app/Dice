@@ -4,6 +4,7 @@
   var btn = document.getElementById('btn');
   var array01 = [1,2,3,4,5,6,7,8,9,10];
   var array02 = [];
+  var c = 1;
 
 
     btn.addEventListener('click', function() {
@@ -20,24 +21,26 @@
           // console.log("Math.random()" + a);
           // console.log("array01.length" + array01.length);
           console.log(count);
-          console.log("a"+ array01);
-          console.log("b"+ array02);
           count++;
-
-        if(array01.length == 0 && array02.length == 0){
+          console.log("a"+ array01.length);
+          console.log("b"+ array02.length);
+        if(c == 0){
           clearTimeout(id);
           console.log("test2");
           this_btn.textContent = "終わり";
-        }else if(array01.length == 0){
+        }else{
+          if(array01.length == 0){
           clearTimeout(id);
           console.log("test1");
           Math.floor(Math.random()* array02.length);
           this_btn.textContent = array02[n];
           array02.splice(n,1);
+          console.log("c"+ array02.length);
+          c = array02.length;
           array01 = array02;
           array02 = [];
           }
-
+        }
         }
 
       countup();
