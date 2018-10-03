@@ -2,71 +2,55 @@
   'use strict';
 
   var btn = document.getElementById('btn');
-  var arr = [1,2,3,4,5,6,7,8,9,10];
-
-  function loopSleep(_loopLimit,_interval, _mainFunc){
-  var loopLimit = _loopLimit;
-  var interval = _interval;
-  var mainFunc = _mainFunc;
-  var i = 0;
-  var loopFunc = function () {
-    var result = mainFunc(i);
-    if (result === false) {
-      // break機能
-      return;
-    }
-    i = i + 1;
-    if (i < loopLimit) {
-      setTimeout(loopFunc, interval);
-    }
-  }
-  loopFunc();
-}
+  var array01 = [1,2,3,4,5,6,7,8,9,10];
+  var array02 = [];
+  var c = 1;
 
 
-  btn.addEventListener('click', function() {
+    btn.addEventListener('click', function() {
+      var count = 0;
+      var this_btn = this;
+      var countup = function(){
+      var id = setTimeout(countup,300);
+      var a = Math.random();
+      var n = Math.floor( a * array01.length);
+      this_btn.textContent = array01[n];
+      array02.push(array01[n]);
+      array01.splice(n,1);
+          console.log("this_btn.textContent" + this_btn.textContent );
+          // console.log("Math.random()" + a);
+          // console.log("array01.length" + array01.length);
+          console.log(count);
+          count++;
+          console.log("a"+ array01.length);
+          console.log("b"+ array02.length);
+        if(c == 0){
+          clearTimeout(id);
+          console.log("test2");
+          this_btn.textContent = "終わり";
+        }else{
+          if(array01.length == 0){
+          clearTimeout(id);
+          console.log("test1");
+          Math.floor(Math.random()* array02.length);
+          this_btn.textContent = array02[n];
+          array02.splice(n,1);
+          console.log("c"+ array02.length);
+          c = array02.length;
+          array01 = array02;
+          array02 = [];
+          }
+        }
+        }
 
-    loopSleep(10, 1000, function(i){
-      console.log(i);
+      countup();
+
+
     });
-
-    if(arr.length == 0){
-      this.textContent = "終わり";
-    }else{
-      var n = Math.floor(Math.random()* arr.length);
-      this.textContent = arr[n];
-      arr.splice(n,1);
-    }
-
-
-
-
-
-
-
-    // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,10];
-    //
-    // for(var i = arr.length - 1; i > 0; i--){
-    //   var j = Math.floor(Math.random() * (i + 1));
-    //   var tmp = arr[i];
-    //   arr[i] = arr[j];
-    //   arr[j] = tmp;
-    //   arr.pop() ;
-    // }
-    //
-    // this.textContent = n;
-
-    //
-    // var min = 1;
-    // var max = 16;
-    // var n = Math.floor(Math.random() * (max + 1 - min)) + min;
-    // this.textContent = n;
-
-  });
-  btn.addEventListener('mousedown', function() {
-    this.className = 'pushed';
-  });
-  btn.addEventListener('mouseup', function() {
-    this.className = '';
-  });
-})();
+    btn.addEventListener('mousedown', function() {
+      this.className = 'pushed';
+    });
+    btn.addEventListener('mouseup', function() {
+      this.className = '';
+    });
+  })();
