@@ -2,7 +2,7 @@
   'use strict';
 
   var btn = document.getElementById('btn');
-  var array01 = [1,2,3,4,5,6,7,8,9,10];
+  var array01 = ["木村さん","鈴木さん","宝田さん","山田さん","高田さん","高野さん","大浪さん","藤尾さん","紀野さん","五藤さん","松下さん","山本","柳瀬さん"];
   var array02 = [];
   var c = 1;
 
